@@ -2,13 +2,13 @@
 Welcome to the first project of C++ Nanodegree! In this project, I will create a route planner that plots a path between two points on a map using real map data from the [OpenStreeMap project](https://www.openstreetmap.org/#map=5/-28.153/133.275).
 
 ## Environment
-👉 macOS 11.5.2 Big Sur with Intel Core i7 chip
-👉 Homebrew 3.2.10
-👉 cMake 3.21.2
-👉 GNU Make 3.81
-👉 C++ 17
-👉 Apple clang version 12.0.5
-👉 IO2D
+👉 macOS 11.5.2 Big Sur with Intel Core i7 chip  
+👉 Homebrew 3.2.10  
+👉 cMake 3.21.2  
+👉 GNU Make 3.81  
+👉 C++ 17  
+👉 Apple clang version 12.0.5  
+👉 IO2D  
 
 ## Installing IO2D
 This library must be built inside the [thirdparty](thirdparty) folder so CMake `find_package` can find it.
