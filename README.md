@@ -3,7 +3,7 @@ Welcome to the first project of C++ Nanodegree!
 
 In this project, I created a route planner that plots a path between two points on a map using real map data from the [OpenStreeMap project](https://www.openstreetmap.org/#map=5/-28.153/133.275) based on the A* search algorithm.
 
-<center><img src="img/Terminal.png" width="400" height="300" alt="Image of the terminal"/> <img src="img/Results.png" width="300" height="300" alt="Image of the results"/></center>
+<p align="center"><img src="img/Terminal.png" width="400" height="300" alt="Image of the terminal"/> <img src="img/Results.png" width="300" height="300" alt="Image of the results"/> </p>
 
 ## Environment
 👉 macOS 11.5.2 Big Sur with Intel Core i7 chip  
