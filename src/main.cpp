@@ -61,7 +61,7 @@ int main(int argc, const char **argv)
   std::cout << "Enter coordinates for starting point 0 to 100 (i.e x y): \n";
   std::cin >> start[0];
   std::cin >> start[1];
-  while(start[0] > 100.0 && start[0] < 0.0 || start[1] > 100.0 && start[1] < 0.0)
+  while(start[0] > 100.0 || start[0] < 0.0 || start[1] > 100.0 || start[1] < 0.0)
   {
     std::cout << "Invalid input. Coordinates must be between 0 and 100!\n";
     std::cin >> start[0];

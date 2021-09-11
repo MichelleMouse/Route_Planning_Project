@@ -25,28 +25,21 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node)
 {
   current_node->FindNeighbors();
 
-  for(int i = 0; i < current_node->neighbors.size(); i++)
+  for(auto& neighbor_node : current_node->neighbors)
   {
-    current_node->neighbors[i]->parent = current_node;
-    current_node->neighbors[i]->g_value = current_node->g_value + current_node->distance(*current_node->neighbors[i]);
-    current_node->neighbors[i]->h_value = CalculateHValue(current_node->neighbors[i]);
-    open_list.push_back(current_node->neighbors[i]);
-    current_node->neighbors[i]->visited = true;
+    neighbor_node->parent = current_node;
+    neighbor_node->g_value = current_node->g_value + current_node->distance(*(neighbor_node));
+    neighbor_node->h_value = CalculateHValue(neighbor_node);
+    open_list.push_back(neighbor_node);
+    neighbor_node->visited = true;
   }
-}
-
-// Compare g+h values of the open_list
-bool RoutePlanner::Compare(RouteModel::Node *n1, RouteModel::Node *n2)
-{
-  float f1 = n1->g_value + n1->h_value;
-  float f2 = n2->g_value + n2->h_value;
-
-  return f1 > f2;
 }
 
 // Sorts the open list and return the next node.
 RouteModel::Node *RoutePlanner::NextNode() {
-  std::sort(open_list.begin(), open_list.end(), Compare);
+  std::sort(open_list.begin(), open_list.end(), [](RouteModel::Node* n1, RouteModel::Node* n2){
+    return n1->g_value + n1->h_value > n2->g_value + n2->h_value;
+  });
 
   RouteModel::Node *lowest = open_list.back();
   open_list.pop_back();
